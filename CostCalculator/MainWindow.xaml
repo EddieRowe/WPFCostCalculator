@@ -1,0 +1,41 @@
+﻿<Window x:Class="CostCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CostCalculator"
+        mc:Ignorable="d"
+        Title="Cost Calculator" Height="250" Width="450">
+    
+    <Border Padding="10">
+        <StackPanel>
+            <!--Material select-->
+            <TextBlock FontWeight="Bold" Text="Material" />
+            <ComboBox x:Name="MaterialSelection" Margin="10" SelectedIndex="0">
+                <ComboBoxItem>Steel</ComboBoxItem>
+                <ComboBoxItem>Chrome</ComboBoxItem>
+                <ComboBoxItem>Copper</ComboBoxItem>
+            </ComboBox>
+            
+            <!--Amount select-->
+            <TextBlock FontWeight="Bold" Text="Number of sheets" />
+            <TextBox x:Name="SheetAmount" Margin="10" Padding="2"></TextBox>
+
+            <!--Final Cost Calculation Area-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Button x:Name="CalculateButton" Click="CalculateButton_Click" Grid.Column="0" Margin="10">Calculate Cost</Button>
+                <TextBlock x:Name="CostText" Grid.Column="1" Margin="10" FontWeight="Bold">£0.00</TextBlock>
+            </Grid>
+            
+
+        </StackPanel>
+    </Border>
+    
+    
+</Window>
